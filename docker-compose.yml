@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  node:
+    env_file:
+      - .env
+    container_name: ${MAIN_SERVICE_NAME}
+    image: ${MAIN_SERVICE_IMAGE}
+    volumes:
+      - ${ECDSA_KEY_FILE_HOST}:/app/operator_keys/ecdsa_key.json:readonly
+      - ${BLS_KEY_FILE_HOST}:/app/operator_keys/bls_key.json:readonly
+    restart: unless-stopped
