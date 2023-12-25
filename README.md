@@ -10,6 +10,8 @@ AVS Service Contract: [0xD2333E11ea617E30fb97900f6ac9782A85f233e7](https://goerl
 
 ### Core operations
 * Register your operator to eigenlayer using [Eigenlayer CLI](https://github.com/Layr-Labs/eigenlayer-cli)
+* Deposit your stake at [Eigenlayer App](https://goerli.eigenlayer.xyz/), see [Eigenlayer stake guide](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide) for more info\
+Mangata AVS currently supports rETH & stETH as LSTs, with minimum of `0.000001` ETH for operator registration
 
 ### Setup Operator
 The easiest way to set up is to clone the repo and follow the instructions below.
@@ -17,7 +19,7 @@ The easiest way to set up is to clone the repo and follow the instructions below
 #### Clone repo
 Clone this repo and execute the following commands:
 ```bash
-git clone https://github.com/mangata-finanace/avs-operator-setup.git
+git clone https://github.com/mangata-finance/avs-operator-setup.git
 cd avs-operator-setup
 chmod +x run.sh
 ```
