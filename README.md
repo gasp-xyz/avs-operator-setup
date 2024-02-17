@@ -25,6 +25,11 @@ chmod +x run.sh
 ```
 Update the `TODO` sections in the  `.env` file given in the root directory of the repository with your own details:
 
+### Configure your node according to your operator on EigenLayer
+```bash
+nano.env
+```
+
 ### Opt-in into Mangata AVS
 ```bash
 ./run.sh opt-in
@@ -37,8 +42,14 @@ docker compose up -d
 ```
 you can view the logs using:
 ```
-docker logs -f <container_id>
+docker logs -f <container_id> 
 ```
+OR
+
+```
+docker logs -f mangata-finalizer-node
+```
+
 Tear down container
 ```bash
 docker compose down
