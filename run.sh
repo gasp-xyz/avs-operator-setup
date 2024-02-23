@@ -8,8 +8,8 @@ optIn() {
   --rm \
   --volume "${ECDSA_KEY_FILE_HOST}":/app/operator_keys/ecdsa_key.json \
   --volume "${BLS_KEY_FILE_HOST}":/app/operator_keys/bls_key.json \
-  ${CLI_SERVICE_IMAGE} \
-  register-operator-with-avs
+  ${MAIN_SERVICE_IMAGE} \
+  opt-in-avs
 }
 
 optOut() {
@@ -17,8 +17,8 @@ optOut() {
     --rm \
     --volume "${ECDSA_KEY_FILE_HOST}":/app/operator_keys/ecdsa_key.json \
     --volume "${BLS_KEY_FILE_HOST}":/app/operator_keys/bls_key.json \
-    ${CLI_SERVICE_IMAGE} \
-    deregister-operator-with-avs
+    ${MAIN_SERVICE_IMAGE} \
+    opt-out-avs
 }
 
 status() {
@@ -26,8 +26,8 @@ status() {
     --rm \
     --volume "${ECDSA_KEY_FILE_HOST}":/app/operator_keys/ecdsa_key.json \
     --volume "${BLS_KEY_FILE_HOST}":/app/operator_keys/bls_key.json \
-    ${CLI_SERVICE_IMAGE} \
-    print-operator-status
+    ${MAIN_SERVICE_IMAGE} \
+    print-status
 }
 
 if [ "$1" = "opt-in" ]; then

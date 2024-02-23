@@ -1,6 +1,6 @@
-## Installation of Mangata Finalizer Operator using docker
+## Installation of Finalizer Operator using docker
 
-AVS Service Contract: [0xD2333E11ea617E30fb97900f6ac9782A85f233e7](https://goerli.etherscan.io/address/0xD2333E11ea617E30fb97900f6ac9782A85f233e7)
+AVS Registry Contract: [0x5620cDb94BaAaD10c20483bd8705DA711b2Bc0a3](https://goerli.etherscan.io/address/0x5620cDb94BaAaD10c20483bd8705DA711b2Bc0a3)
 
 ### Prerequisites:
 * Docker installed
@@ -11,7 +11,7 @@ AVS Service Contract: [0xD2333E11ea617E30fb97900f6ac9782A85f233e7](https://goerl
 ### Core operations
 * Register your operator to eigenlayer using [Eigenlayer CLI](https://github.com/Layr-Labs/eigenlayer-cli)
 * Deposit your stake at [Eigenlayer App](https://goerli.eigenlayer.xyz/), see [Eigenlayer stake guide](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide) for more info\
-Mangata AVS currently supports rETH & stETH as LSTs, with minimum of `0.000001` ETH for operator registration
+AVS supports all tokens provided by EigenLayer, with minimum of `1 ETH` stake for operator registration
 
 ### Setup Operator
 The easiest way to set up is to clone the repo and follow the instructions below.
@@ -25,12 +25,12 @@ chmod +x run.sh
 ```
 Update the `TODO` sections in the  `.env` file given in the root directory of the repository with your own details:
 
-### Opt-in into Mangata AVS
+### Opt-in into AVS
 ```bash
 ./run.sh opt-in
 ```
 
-### Run MangataFinalizer Operator
+### Run Finalizer Operator
 Execute the following command to start the docker containers:
 ```
 docker compose up -d
@@ -43,13 +43,13 @@ Tear down container
 ```bash
 docker compose down
 ```
-### Opt-out into Mangata AVS
+### Opt-out into AVS
 ```bash
 ./run.sh opt-out
 ```
 ### Upgrade your node
 
-Upgrade the AVS software for your Mangata Finalizer service setup by following the steps below:
+Upgrade the AVS software for your Finalizer service setup by following the steps below:
 
 **Step 1:** Pull the latest repo
 
