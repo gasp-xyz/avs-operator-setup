@@ -36,8 +36,8 @@ Execute the following command to start the docker containers:
 docker compose up -d
 ```
 you can view the logs using:
-```
-docker logs -f <container_id>
+```bash
+./logs.sh
 ```
 Tear down container
 ```bash
