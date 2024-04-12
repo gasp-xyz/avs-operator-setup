@@ -11,7 +11,8 @@ AVS Registry Contract: [0xfd6A45621DDfeBF94C082e60E0De92aA305a97a1](https://hole
 ### Core operations
 * Register your operator to eigenlayer using [Eigenlayer CLI](https://github.com/Layr-Labs/eigenlayer-cli)
 * Deposit your stake at [Eigenlayer App](https://holesky.eigenlayer.xyz/), see [Eigenlayer stake guide](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide) for more info\
-AVS supports all tokens provided by EigenLayer, with minimum of `1 ETH` stake for operator registration
+AVS supports [stETH, rETH, WETH] tokens provided by EigenLayer, with minimum of `10 ETH` stake for operator registration
+Max operators count is currently limited to 50, first come first served.
 
 ### Setup Operator
 The easiest way to set up is to clone the repo and follow the instructions below.
