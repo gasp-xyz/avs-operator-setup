@@ -1,6 +1,6 @@
 ## Installation of Finalizer Operator using docker
 
-AVS Registry Contract: [0x5620cDb94BaAaD10c20483bd8705DA711b2Bc0a3](https://goerli.etherscan.io/address/0x5620cDb94BaAaD10c20483bd8705DA711b2Bc0a3)
+AVS Registry Contract: [0xfd6A45621DDfeBF94C082e60E0De92aA305a97a1](https://holesky.etherscan.io/address/0xfd6A45621DDfeBF94C082e60E0De92aA305a97a1)
 
 ### Prerequisites:
 * Docker installed
@@ -10,7 +10,7 @@ AVS Registry Contract: [0x5620cDb94BaAaD10c20483bd8705DA711b2Bc0a3](https://goer
 
 ### Core operations
 * Register your operator to eigenlayer using [Eigenlayer CLI](https://github.com/Layr-Labs/eigenlayer-cli)
-* Deposit your stake at [Eigenlayer App](https://goerli.eigenlayer.xyz/), see [Eigenlayer stake guide](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide) for more info\
+* Deposit your stake at [Eigenlayer App](https://holesky.eigenlayer.xyz/), see [Eigenlayer stake guide](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide) for more info\
 AVS supports all tokens provided by EigenLayer, with minimum of `1 ETH` stake for operator registration
 
 ### Setup Operator
