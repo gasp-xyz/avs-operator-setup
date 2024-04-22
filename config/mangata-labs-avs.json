@@ -1,0 +1,7 @@
+{
+  "name": "finisher.avs",
+  "website": "https://www.mangata.finance/",
+  "description": "A security layer providing block finalization on L2 chain. For L2 blocks, the Operators re-execute, verify & provide storage proofs that are aggregated and stored on Eth layer.",
+  "logo": "https://raw.githubusercontent.com/mangata-finance/mangata-blog/main/assets/images/logo-mobile.png",
+  "twitter": "https://twitter.com/MangataFinance"
+}
