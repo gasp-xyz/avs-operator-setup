@@ -1,5 +1,5 @@
 {
-  "name": "GASP Finalizer",
+  "name": "Gasp Finalizer",
   "website": "https://www.gasp.xyz/",
   "description": "A security layer providing block finalization on L2 chain. For L2 blocks, the Operators re-execute, verify & provide storage proofs that are aggregated and stored on Eth layer.",
   "logo": "https://raw.githubusercontent.com/mangata-finance/avs-operator-setup/main/config/logo.png",
