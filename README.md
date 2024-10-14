@@ -21,7 +21,8 @@ Operator stakes are updated regularly, if the stake drops below minimum required
 The easiest way to set up is to clone the repo and follow the instructions below.
 
 #### Join Eigenlayer
-Deposit stake into eigenlayer using the [Eigenlayer App](https://holesky.eigenlayer.xyz/)and register on eigenlayer using the [Eigenlayer Cli](https://github.com/Layr-Labs/eigenlayer-cli)
+Deposit stake into eigenlayer using the [Eigenlayer App](https://holesky.eigenlayer.xyz/) and register on eigenlayer using the [Eigenlayer Cli](https://github.com/Layr-Labs/eigenlayer-cli)
+
 Please save the keys generated/used in this step - they will be required
 
 #### Clone our setup repo
