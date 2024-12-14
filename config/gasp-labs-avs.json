@@ -1,7 +1,7 @@
 {
   "name": "Gasp Finalizer",
   "website": "https://www.gasp.xyz/",
-  "description": "A security layer providing block finalization on L2 chain. For L2 blocks, the Operators re-execute, verify & provide storage proofs that are aggregated and stored on Eth layer.",
-  "logo": "https://raw.githubusercontent.com/mangata-finance/avs-operator-setup/main/config/logo.png",
+  "description": "Gasp is a cross-chain DEX and protocol designed for exchanging crypto assets between blockchains, such as Ethereum L2s and rollups, Solana, Bitcoin, RWA protocols, web3 gaming ecosystems, and much more. Gasp AVS ensures transaction finality through Ethereum’s crypto-economic security, providing a unified security framework that enhances the reliability and trustworthiness of cross-chain transactions.",
+  "logo": "https://raw.githubusercontent.com/gasp-xyz/avs-operator-setup/main/config/logo.png",
   "twitter": "https://twitter.com/gasp_xyz"
 }
