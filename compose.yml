@@ -6,10 +6,5 @@ services:
     volumes:
       - ./data:/data
     environment:
-      AVS_BLOCK_VALIDATION_PERIOD: ${AVS_BLOCK_VALIDATION_PERIOD:-100}
-      AVS_DEBOUNCE_RPC: ${AVS_DEBOUNCE_RPC:-20}
-      AVS_KICK_PERIOD: ${AVS_KICK_PERIOD:-25}
-      AVS_TASK_EXPIRATION: ${AVS_TASK_EXPIRATION:-300}
-      AVS_UPDATE_STAKE_PERIOD: ${AVS_UPDATE_STAKE_PERIOD:-150}
       # Use RUST_LOG to control logging levels
       RUST_LOG: ${RUST_LOG:-info,substrate=warn}
