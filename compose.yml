@@ -5,8 +5,6 @@ services:
     env_file: .env
     volumes:
       - ./data:/data
-      - ${ECDSA_KEY_FILE_HOST:-./operator_keys/ecdsa.key.json}:/app/operator_keys/ecdsa_key.json:readonly
-      - ${BLS_KEY_FILE_HOST:-./operator_keys/bls.key.json}:/app/operator_keys/bls_key.json:readonly
     environment:
       AVS_BLOCK_VALIDATION_PERIOD: ${AVS_BLOCK_VALIDATION_PERIOD:-100}
       AVS_DEBOUNCE_RPC: ${AVS_DEBOUNCE_RPC:-20}
