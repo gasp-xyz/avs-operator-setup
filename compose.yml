@@ -1,0 +1,10 @@
+services:
+  gasp-avs:
+    image: gaspxyz/gasp-avs:7387cc389edd5792421456e72c2096b1712d83b5
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./data:/data
+    environment:
+      # Use RUST_LOG to control logging levels
+      RUST_LOG: ${RUST_LOG:-info,substrate=warn}

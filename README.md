@@ -1,6 +1,7 @@
 ## Installation of Finalizer Operator using docker
 
-AVS Registry Contract: [0xfd6A45621DDfeBF94C082e60E0De92aA305a97a1](https://holesky.etherscan.io/address/0xfd6A45621DDfeBF94C082e60E0De92aA305a97a1)
+Mainnet Gasp AVS Registry Contract: [0x9A986296d45C327dAa5998519AE1B3757F1e6Ba1](https://etherscan.io/address/0x9A986296d45C327dAa5998519AE1B3757F1e6Ba1)
+Testnet Gasp AVS Registry Contract: [0xb4dd45a08BFA6fBC19F7cD624cdfef87CE95e7AC](https://holesky.etherscan.io/address/0xb4dd45a08BFA6fBC19F7cD624cdfef87CE95e7AC)
 
 ### Prerequisites:
 * Docker installed
@@ -9,7 +10,7 @@ AVS Registry Contract: [0xfd6A45621DDfeBF94C082e60E0De92aA305a97a1](https://hole
 > NOTE: For any Docker based commands, if you have installed as root then you might have to append `sudo` in front of the command.
 
 ### Core operations
-* Allowing the Gasp node to sync - this is the node that the `SUBSTRATE_RPC_URL` points to
+* Allowing the embedded Gasp rollup-node to sync
 * Register your operator to eigenlayer using [Eigenlayer CLI](https://github.com/Layr-Labs/eigenlayer-cli)
 * Deposit your stake at [Eigenlayer App](https://holesky.eigenlayer.xyz/), see [Eigenlayer stake guide](https://docs.eigenlayer.xyz/restaking-guides/restaking-user-guide) for more info\
 AVS supports [ankrETH, mETH, stETH, ETHx, osETH, sfrxETH, rETH, WETH] tokens provided by EigenLayer, with minimum of `10 ETH` total stake for operator registration
@@ -30,20 +31,24 @@ Clone this repo and execute the following commands:
 ```bash
 git clone https://github.com/gasp-xyz/avs-operator-setup.git
 cd avs-operator-setup
-chmod +x run.sh
 ```
 
-#### Update the .env
-Update the `TODO` sections in the  `.env` file given in the root directory of the repository with your own details
+#### Prepare the the `.env` file
+
+Copy the `.env.mainnet` or `.env.testnet` file to `.env` file depending on the network where you plan to run `gasp-avs` operator.
+Update the `TODO` section in the  `.env` file given in the root directory of the repository with your own details
 
 #### Run operator to sync the Gasp node
-We need the target Gasp node synced to the Gasp blockchain network before the operator can function. To do this simply run the operator and it will wait for the Gasp node to sync 
+
+We need the target Gasp node synced to the Gasp blockchain network before the operator can function. To do this simply run the operator and it will wait for the Gasp node to sync before proceeding.
+
 ```bash
 docker compose up -d
 ```
-Once the sync has completed, the operator will check the regsitration of the operator with the avs. Avs registration (opt-in) is different from the Eigenlayer registration. Since we haven't performed the avs registration yet, the operator will request you to complete avs registration first before proceeding (you can check the operator logs with `docker logs -f <container_id>`).
+Once the sync has completed, the operator will check the regsitration of the operator with the avs. Avs registration (opt-in) is different from the Eigenlayer registration. Since we haven't performed the avs registration yet, the operator will request you to complete avs registration first before proceeding (you can check the operator logs with `docker compose logs -f`).
 
-Now stop the operator with
+Now stop the operator with:
+
 ```bash
 docker compose down
 ```
@@ -51,58 +56,42 @@ docker compose down
 It is recomended that the sync completes before you register with the avs - since you may get kicked for inactivity while the node is syncing
 
 #### Register with the AVS
-To register with the avs run the opt-in command
+
 ```bash
-./run.sh opt-in
+# To register with the avs run the opt-in command
+docker compose exec gasp-avs /app/gasp-avs opt-in
 ```
 
 #### Run Operator
-Now you are set to run the operator
-Execute the following command to start the docker containers:
-```
+
+```bash
+# Start the operator
 docker compose up -d
-```
-you can view the logs using:
-```
-docker logs -f <container_id>
+# Check the logs
+docker compose logs -f
+# Check `gasp-avs` status
+docker compose exec gasp-avs /app/gasp-avs print-status
 ```
 
 ### Stop Operator
-Tear down container
+
 ```bash
 docker compose down
+# You may also need to remove the `rollup-node` stored data
+# You can do this by removing the `data` directory:
+# rm -rf ./data
 ```
 ### Opt-out into AVS
+
 ```bash
-./run.sh opt-out
+docker compose exec gasp-avs /app/gasp-avs opt-out
 ```
+
 ### Upgrade your node
+Upgrade the AVS software for your `gasp-avs` operator service setup by following the steps below:
 
-Upgrade the AVS software for your Finalizer service setup by following the steps below:
-
-**Step 1:** Pull the latest repo
-
-```
+```bash
 cd avs-operator-setup
 git pull
-```
-
-**Step 2:** Pull the latest docker images
-
-```
-docker compose pull
-```
-
-**Step 3:** Stop the existing services
-
-```
-docker compose down
-```
-
-**Step 4:** Start your services again
-
-If there are any specific instructions that needs to be followed for any upgrade, those instructions will be given with the release notes of the specific release. Please check the latest [release notes](https://github.com/gasp-xyz/avs-operator-setup/releases) on Github and follow the instructions before starting the services again.
-
-```
 docker compose up -d
 ```
