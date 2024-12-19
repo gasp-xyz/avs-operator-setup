@@ -57,9 +57,11 @@ It is recomended that the sync completes before you register with the avs - sinc
 
 #### Register with the AVS
 
+> NOTE: Operator registration may be temporarily paused by the Gasp team. If you receive an error message saying "Pausable: index is paused", please wait for an announcement when registration is reopened.
+
 ```bash
 # To register with the avs run the opt-in command
-docker compose exec gasp-avs /app/gasp-avs opt-in
+docker compose run --rm gasp-avs /app/gasp-avs opt-in-avs
 ```
 
 #### Run Operator
