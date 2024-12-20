@@ -80,8 +80,8 @@ docker compose exec gasp-avs /app/gasp-avs print-status
 ```bash
 docker compose down
 # You may also need to remove the `rollup-node` stored data
-# You can do this by removing the `data` directory:
-# rm -rf ./data
+# You can do this by running the following command:
+# docker compose down -v
 ```
 ### Opt-out into AVS
 

@@ -4,7 +4,10 @@ services:
     restart: unless-stopped
     env_file: .env
     volumes:
-      - ./data:/data
+      - gasp-avs-data:/data
     environment:
       # Use RUST_LOG to control logging levels
       RUST_LOG: ${RUST_LOG:-info,substrate=warn}
+
+volumes:
+  gasp-avs-data:
