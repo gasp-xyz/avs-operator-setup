@@ -9,6 +9,11 @@ Testnet Gasp AVS Registry Contract: [0xb4dd45a08BFA6fBC19F7cD624cdfef87CE95e7AC]
 
 > NOTE: For any Docker based commands, if you have installed as root then you might have to append `sudo` in front of the command.
 
+### System Requirements:
+* 4 vCPU Cores
+* 16 GB RAM
+* 200 GB SSD
+
 ### Core operations
 * Allowing the embedded Gasp rollup-node to sync
 * Register your operator to eigenlayer using [Eigenlayer CLI](https://github.com/Layr-Labs/eigenlayer-cli)
