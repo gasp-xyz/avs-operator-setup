@@ -1,6 +1,6 @@
 services:
   gasp-avs:
-    image: gaspxyz/gasp-avs:7387cc389edd5792421456e72c2096b1712d83b5
+    image: gaspxyz/gasp-avs:16323b6a2f7f01eb41ed8428a74758c8fd1c635e
     restart: unless-stopped
     env_file: .env
     volumes:
