@@ -43,6 +43,18 @@ cd avs-operator-setup
 Copy the `.env.mainnet` or `.env.testnet` file to `.env` file depending on the network where you plan to run `gasp-avs` operator.
 Update the `TODO` section in the  `.env` file given in the root directory of the repository with your own details
 
+
+ECDSA_KEY_JSON ( content of the json `jq -c '.' /path/to/ecdsa.key.json` )
+
+BLS_KEY_JSON ( content of the json `jq -c '.' /path/to/bls.key.json` ) 
+
+BLS_KEY_PASSWORD
+
+ECDSA_KEY_PASSWORD
+
+Path for keys can be obtained by `eigenlayer operator keys list` 
+
+
 #### Run operator to sync the Gasp node
 
 We need the target Gasp node synced to the Gasp blockchain network before the operator can function. To do this simply run the operator and it will wait for the Gasp node to sync before proceeding.
@@ -70,6 +82,8 @@ docker compose run --rm gasp-avs /app/gasp-avs opt-in-avs
 ```
 
 #### Run Operator
+
+Once the opt-in succeeds and the operator is registered, ( for security reasons ) the operator can remove `ECDSA_KEY_JSON` , `ECDSA_KEY_PASSWORD`, and set `ECDSA_ADDRESS` in the `.env` file. So that ecdsa keys are not exposed.
 
 ```bash
 # Start the operator
